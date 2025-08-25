@@ -14,8 +14,6 @@ pipeline {
         DOCKER_LATEST = "${DOCKER_IMAGE}:latest"
         DOCKER_VERSIONED = "${DOCKER_IMAGE}:${DOCKER_TAG}"
         CONTAINER_NAME = 'mon-app-js-container'
-        
-        // Configuration Slack
         SLACK_CHANNEL = '#deployments'
         SLACK_TEAM_DOMAIN = 'ipi-sandbox'
     }
