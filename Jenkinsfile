@@ -16,7 +16,7 @@ pipeline {
         CONTAINER_NAME = 'mon-app-js-container'
         
         // Configuration Slack
-        SLACK_CHANNEL = '#tous-ipi-sandbox'
+        SLACK_CHANNEL = '#deployments'
         SLACK_TEAM_DOMAIN = 'ipi-sandbox'
     }
     
