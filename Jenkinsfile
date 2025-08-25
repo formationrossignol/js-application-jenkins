@@ -6,7 +6,7 @@ pipeline {
     }
     
     environment {
-        NODE_VERSION = '24'
+        NODE_VERSION = '18'
         APP_NAME = 'mon-app-js'
         DEPLOY_DIR = '/var/www/html/mon-app'
     }
