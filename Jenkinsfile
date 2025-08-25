@@ -1,8 +1,12 @@
 pipeline {
     agent any
     
+    tools {
+        nodejs 'NodeJS'
+    }
+    
     environment {
-        NODE_VERSION = '18'
+        NODE_VERSION = '24'
         APP_NAME = 'mon-app-js'
         DEPLOY_DIR = '/var/www/html/mon-app'
     }
