@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mon-app-js:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mon-app-js-container
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - APP_NAME=mon-app-js
+    volumes:
+      # Optionnel: pour persister les logs
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  logs:
