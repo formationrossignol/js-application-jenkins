@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Installation des dépendances Node.js...'
                 sh '''
-                    sh 'npm install
+                    npm install
                     node --version
                     npm --version
                     npm ci
