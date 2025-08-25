@@ -102,9 +102,6 @@ pipeline {
         }
         
         stage('Deploy to Staging') {
-            when {
-                branch 'develop'
-            }
             steps {
                 echo 'Déploiement vers l\'environnement de staging...'
                 script {
