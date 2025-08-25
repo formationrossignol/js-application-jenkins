@@ -38,7 +38,7 @@ pipeline {
             }
             post {
                 always {
-                    junit testResultsPattern: '**/test-results.xml', allowEmptyResults: true
+                    junit testResults: '**/test-results.xml', allowEmptyResults: true
                 }
             }
         }
