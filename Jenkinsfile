@@ -86,7 +86,6 @@ pipeline {
                 echo 'Construction de l\'image Docker...'
                 script {
                     try {
-                        // Notification de début de build Docker
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
@@ -114,7 +113,6 @@ pipeline {
                         )
                         
                     } catch (Exception e) {
-                        // Notification d'échec du build Docker
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
@@ -138,7 +136,6 @@ pipeline {
                 echo 'Déploiement vers l\'environnement de staging...'
                 script {
                     try {
-                        // Notification de début de déploiement staging
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
@@ -166,7 +163,6 @@ pipeline {
                             docker ps | grep ${CONTAINER_NAME}-staging
                         '''
                         
-                        // Notification de succès staging
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
@@ -199,7 +195,6 @@ pipeline {
                 echo 'Déploiement vers la production...'
                 script {
                     try {
-                        // Notification de début de déploiement production
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
@@ -232,7 +227,6 @@ pipeline {
                             docker ps | grep ${CONTAINER_NAME}
                         '''
                         
-                        // Notification de succès production avec mention @channel
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
@@ -245,7 +239,6 @@ pipeline {
                         )
                         
                     } catch (Exception e) {
-                        // Notification d'échec critique
                         slackSend(
                             channel: env.SLACK_CHANNEL,
                             teamDomain: env.SLACK_TEAM_DOMAIN,
