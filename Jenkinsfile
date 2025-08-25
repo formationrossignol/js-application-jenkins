@@ -16,8 +16,8 @@ pipeline {
         CONTAINER_NAME = 'mon-app-js-container'
         
         // Configuration Slack
-        SLACK_CHANNEL = '#deployments'  // ou votre canal préféré
-        SLACK_TEAM_DOMAIN = 'votre-workspace'  // nom de votre workspace Slack
+        SLACK_CHANNEL = '#tous-ipi-sandbox'
+        SLACK_TEAM_DOMAIN = 'ipi-sandbox'
     }
     
     stages {
